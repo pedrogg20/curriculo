@@ -21,7 +21,7 @@ O código foi estruturado com o auxílio do **Google AI Studio** para garantir a
 ## 💻 Visualização Online
 
 O projeto pode ser visualizado em tempo real através do link abaixo:
-👉 [https://pedrogg20.github.io/novocurriculo/](https://pedrogg20.github.io/novocurriculo/)
+👉 [https://pedrogg20.github.io/curriculo/](https://pedrogg20.github.io/curriculo/)
 
 ## 📂 Estrutura do Repositório
 
