@@ -1,14 +1,203 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pedro Elias dos Santos Ferreira - Currículo</title>
-    <script type="module" crossorigin src="./assets/index-BylpZWvV.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BTlK-XTD.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>  
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Pedro Elias dos Santos Ferreira</title>
+    
+    <!-- Importação das Fontes Montserrat e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Arquivo de Estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- Botão de Imprimir -->
+    <button id="print-btn" class="print-button">
+        <i data-lucide="printer"></i>
+        Imprimir Currículo
+    </button>
+
+    <div class="resume-container">
+        
+        <!-- Divisor vertical visual -->
+        <div class="vertical-divider"></div>
+
+        <!-- COLUNA DA ESQUERDA -->
+        <aside class="sidebar">
+            
+            <!-- NOME (Altere seu nome aqui) -->
+            <header class="name-header">
+                <h1>Pedro Elias<br>dos Santos<br>Ferreira</h1>
+            </header>
+
+            <div class="sidebar-divider"></div>
+
+            <!-- CONTATO (Altere seus dados de contato aqui) -->
+            <section class="sidebar-section">
+                <h2>Contato</h2>
+                <div class="contact-item">
+                    <i data-lucide="phone"></i>
+                    <span>(41) 98840-2775</span>
+                </div>
+                <div class="contact-item">
+                    <i data-lucide="mail"></i>
+                    <a href="mailto:pedroeliasferreira@gmail.com">pedroeliasferreira@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i data-lucide="linkedin"></i>
+                    <a href="https://linkedin.com/in/pedroeliasferreira" target="_blank">linkedin.com/in/pedroeliasferreira</a>
+                </div>
+                <div class="contact-item">
+                    <i data-lucide="map-pin"></i>
+                    <span>Av. Dr. Freitas, 1228, Pedreira, Belém/PA</span>
+                </div>
+            </section>
+
+            <div class="sidebar-divider"></div>
+
+            <!-- HABILIDADES (Altere suas habilidades aqui) -->
+            <section class="sidebar-section">
+                <h2>Habilidades</h2>
+                <div class="skill-item">
+                    <span>Adobe Premiere Pro</span>
+                    <span class="skill-badge">Básico</span>
+                </div>
+                <div class="skill-item">
+                    <span>Adobe After Effects</span>
+                    <span class="skill-badge">Básico</span>
+                </div>
+                <div class="skill-item">
+                    <span>Adobe Photoshop</span>
+                    <span class="skill-badge">Básico</span>
+                </div>
+                <div class="skill-item">
+                    <span>Adobe Illustrator</span>
+                    <span class="skill-badge">Básico</span>
+                </div>
+            </section>
+
+            <div class="sidebar-divider"></div>
+
+            <!-- IDIOMAS (Altere seus idiomas aqui) -->
+            <section class="sidebar-section">
+                <h2>Idiomas</h2>
+                <ul class="language-list">
+                    <li>Libras</li>
+                    <li>Inglês</li>
+                </ul>
+            </section>
+
+        </aside>
+
+        <!-- COLUNA DA DIREITA -->
+        <main class="main-content">
+
+            <!-- RESUMO PROFISSIONAL (Altere seu resumo aqui) -->
+            <section class="content-section">
+                <h2 class="section-title">
+                    <i data-lucide="user"></i>
+                    Resumo Profissional
+                </h2>
+                <p class="summary-text">
+                    Graduado em Design Gráfico (concluído em 2025), PCD auditivo, com perfil resiliente e foco em comunicação visual. Experiência administrativa e habilidades em produção e edição gráfica, unindo organização e criatividade.
+                </p>
+            </section>
+
+            <!-- FORMAÇÃO (Altere sua formação aqui) -->
+            <section class="content-section">
+                <h2 class="section-title">
+                    <i data-lucide="graduation-cap"></i>
+                    Formação
+                </h2>
+                
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Tecnologia em Design Gráfico</span>
+                        <span class="entry-date">2025</span>
+                    </div>
+                    <div class="entry-subtitle">UNAMA - Universidade da Amazônia</div>
+                    <div class="entry-description">Belém/PA</div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Ensino Médio</span>
+                        <span class="entry-date">2016 - 2017</span>
+                    </div>
+                    <div class="entry-subtitle">Colégio Estadual para Surdos Alcindo Fanaya Junior</div>
+                </div>
+            </section>
+
+            <!-- EXPERIÊNCIAS (Altere suas experiências aqui) -->
+            <section class="content-section">
+                <h2 class="section-title">
+                    <i data-lucide="briefcase"></i>
+                    Experiências
+                </h2>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Auxiliar Administrativo | TJPR</span>
+                        <span class="entry-date">2021-2023</span>
+                    </div>
+                    <ul class="entry-description">
+                        <li>Gestão documental e suporte administrativo especializado ao setor de processos. Expertise em organização de dados via Microsoft Excel e manutenção de sistemas de registro corporativo, garantindo a celeridade na tramitação de documentos oficiais.</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Auxiliar de Escritório</span>
+                        <span class="entry-date">2019-2021</span>
+                    </div>
+                    <div class="entry-subtitle">Trombini Embalagens S/A, Curitiba/PR</div>
+                    <ul class="entry-description">
+                        <li>Treinamentos na área de auxiliar de escritório.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- CURSOS (Altere seus cursos aqui) -->
+            <section class="content-section">
+                <h2 class="section-title">
+                    <i data-lucide="award"></i>
+                    Cursos
+                </h2>
+
+                <div class="course-item">
+                    <div class="course-name">Pacote Office</div>
+                    <div class="course-hours">Carga Horária: 100 horas</div>
+                </div>
+
+                <div class="course-item">
+                    <div class="course-name">Auxiliar Administrativo</div>
+                    <div class="course-hours">Carga Horária: 100 horas</div>
+                </div>
+
+                <div class="course-item">
+                    <div class="course-name">Inglês Básico</div>
+                    <div class="course-hours">Carga Horária: 10 horas</div>
+                </div>
+
+                <div class="course-item">
+                    <div class="course-name">Adobe Photoshop - Modo Essencial</div>
+                    <div class="course-hours">Héber Simeoni Cursos Online (11 horas)</div>
+                </div>
+                
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Arquivo de Scripts -->
+    <script src="main.js"></script>
+</body>
+</html>  

@@ -1,0 +1,516 @@
+/* 
+   CORES PRINCIPAIS DO PDF 
+   Altere estas variáveis para mudar as cores de todo o site
+*/
+:root {
+  --primary-blue: #0066FF;
+  --text-dark: #1A1A1A;
+  --text-muted: #555555;
+  --bg-white: #FFFFFF;
+  --line-color: #000000;
+  --badge-bg: #0066FF;
+  --badge-text: #FFFFFF;
+  --font-header: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #f4f4f4;
+  color: var(--text-dark);
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+/* Botão de Imprimir */
+.print-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-header);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.print-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4);
+  background-color: #0052cc;
+}
+
+.print-button i {
+  width: 18px;
+  height: 18px;
+}
+.resume-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--bg-white);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  min-height: 1100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Coluna da Esquerda (Contato, Habilidades, Idiomas) */
+.sidebar {
+  width: 38%;
+  padding: 60px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinhado à esquerda */
+  text-align: left;
+}
+
+/* Coluna da Direita (Resumo, Formação, Experiência) */
+.main-content {
+  width: 62%;
+  padding: 60px 40px;
+  border-left: 1px solid #eee;
+}
+
+/* Linha vertical separadora (estilo PDF) */
+.vertical-divider {
+  position: absolute;
+  left: 38%;
+  top: 60px;
+  bottom: 60px;
+  width: 1px;
+  background-color: #ddd;
+}
+
+/* Cabeçalho com Nome */
+.name-header {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.name-header h1 {
+  font-family: var(--font-header);
+  font-size: 2.8rem;
+  line-height: 1.1;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+/* Seções da Sidebar */
+.sidebar-section {
+  width: 100%;
+  margin-bottom: 35px;
+  text-align: left; /* Alinhamento à esquerda para melhor leitura */
+}
+
+.sidebar-section h2 {
+  font-family: var(--font-header);
+  color: var(--primary-blue);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Linhas horizontais decorativas */
+.sidebar-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--line-color);
+  margin: 30px 0;
+}
+
+/* Contatos */
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+  text-align: left;
+  font-size: 0.82rem;
+  font-weight: 500;
+  gap: 20px; /* Uso de gap para garantir separação visível entre ícone e texto */
+}
+
+.contact-item i {
+  color: #666;
+  width: 14px; /* Tamanho reduzido conforme solicitado */
+  height: 14px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-item a {
+  color: inherit;
+  text-decoration: none;
+  /* Removido word-break para evitar quebras no meio das palavras */
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* Habilidades */
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.skill-badge {
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  padding: 2px 12px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Idiomas */
+.language-list {
+  list-style: none;
+  font-size: 1.1rem;
+}
+
+.language-list li {
+  margin-bottom: 5px;
+}
+
+/* Seções do Conteúdo Principal */
+.content-section {
+  margin-bottom: 35px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.content-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-section h2.section-title {
+  font-family: var(--font-header);
+  color: var(--primary-blue);
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.content-section h2.section-title i {
+  width: 24px;
+  height: 24px;
+}
+
+.summary-text {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+}
+
+/* Itens de Formação e Experiência */
+.entry {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+.entry-title {
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.entry-date {
+  font-family: var(--font-header);
+  color: var(--primary-blue);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.entry-subtitle {
+  font-family: var(--font-header);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.entry-description {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  list-style: none;
+}
+
+.entry-description li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 5px;
+}
+
+.entry-description li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-dark);
+}
+
+/* Cursos */
+.course-item {
+  margin-bottom: 15px;
+}
+
+.course-name {
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.course-hours {
+  font-size: 0.95rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .resume-container {
+    flex-direction: column;
+  }
+  
+  .sidebar, .main-content {
+    width: 100%;
+    padding: 40px 30px;
+  }
+  
+  .vertical-divider {
+    display: none;
+  }
+  
+  .main-content {
+    border-left: none;
+    border-top: 1px solid #eee;
+  }
+  
+  .sidebar {
+    text-align: center;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+  
+  .name-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Animação de entrada suave */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Estilos para Impressão (PDF A4) */
+@media print {
+  body {
+    background: white;
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    font-size: 11px; /* Redução da fonte base para impressão */
+  }
+
+  .print-button {
+    display: none !important;
+  }
+
+  .resume-container {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    box-shadow: none;
+    min-height: 297mm;
+    display: flex !important;
+    flex-direction: row !important;
+    border: none !important;
+  }
+
+  .sidebar {
+    width: 38% !important;
+    padding: 25px 20px !important; /* Redução de padding */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .main-content {
+    width: 62% !important;
+    padding: 25px 25px !important; /* Redução de padding */
+    border-left: 1px solid #eee !important;
+  }
+
+  .vertical-divider {
+    display: block !important;
+    left: 38% !important;
+    top: 25px !important;
+    bottom: 25px !important;
+  }
+
+  .content-section {
+    opacity: 1 !important;
+    transform: none !important;
+    margin-bottom: 18px !important; /* Redução de margem entre seções */
+    page-break-inside: avoid;
+  }
+
+  /* Ajustes de Tipografia para Impressão */
+  .name-header {
+    margin-bottom: 20px !important;
+  }
+
+  .name-header h1 {
+    font-size: 1.8rem !important; /* Nome menor no PDF */
+    line-height: 1.1 !important;
+  }
+
+  .section-title {
+    font-size: 1.1rem !important; /* Títulos de seção menores */
+    margin-bottom: 12px !important;
+  }
+
+  .sidebar-section h2 {
+    font-size: 1.1rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Unificação ABSOLUTA de tamanhos de fonte para o conteúdo no PDF */
+  .summary-text, 
+  .entry-description li, 
+  .course-item p, 
+  .course-item h4,
+  .contact-item span, 
+  .skill-item span:not(.skill-badge), 
+  .language-list li,
+  .entry-location,
+  .sidebar-section p,
+  .sidebar-section li {
+    font-size: 9.5pt !important;
+    line-height: 1.5 !important;
+    color: #333 !important;
+    font-weight: 500 !important;
+  }
+
+  /* Datas em Azul */
+  .entry-date {
+    font-size: 9.5pt !important;
+    color: #0066FF !important;
+    font-weight: 700 !important;
+  }
+
+  /* Solução de Alinhamento Rígido para Contatos (CSS Grid) */
+  .contact-item {
+    display: grid !important;
+    grid-template-columns: 22px 1fr !important; /* Coluna fixa para ícones */
+    align-items: start !important;
+    gap: 5px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .contact-item i {
+    width: 14px !important;
+    height: 14px !important;
+    margin-top: 3px !important; /* Alinhamento preciso com o topo da primeira linha */
+    justify-self: start !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+  }
+
+  .contact-item span {
+    display: block !important;
+    word-break: break-word !important;
+  }
+
+  /* Padronização de Habilidades e Idiomas */
+  .skill-item {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    align-items: center !important;
+    margin-bottom: 6px !important;
+  }
+
+  .language-list {
+    padding-left: 0 !important;
+    margin-top: 5px !important;
+  }
+
+  .language-list li {
+    margin-bottom: 4px !important;
+  }
+
+  .skill-item .skill-badge {
+    padding: 2px 8px !important;
+    font-size: 8pt !important;
+    background-color: #0066FF !important;
+    color: #FFFFFF !important;
+    border-radius: 3px !important;
+    line-height: 1 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .entry-header h3 {
+    font-size: 1.05rem !important;
+  }
+
+  .entry {
+    margin-bottom: 12px !important;
+  }
+
+  .entry-description li {
+    margin-bottom: 3px !important;
+  }
+
+  .course-item {
+    margin-bottom: 6px !important;
+  }
+
+  .sidebar-divider {
+    margin: 15px 0 !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}

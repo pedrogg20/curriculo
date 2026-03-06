@@ -1,20 +1,39 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Conversor de Currículo: PDF para Web Ret fiel
 
-# Run and deploy your AI Studio app
+Este projeto consiste em uma aplicação web que replica fielmente o layout de um currículo originalmente em formato PDF, permitindo a visualização via navegador e a exportação (impressão) de volta para PDF mantendo a integridade visual e a estrutura do design original.
 
-This contains everything you need to run your app locally.
+O código foi estruturado com o auxílio do **Google AI Studio** para garantir a precisão na conversão dos elementos visuais e de texto.
 
-View your app in AI Studio: https://ai.studio/apps/5bde4d1b-4b84-4c8d-920f-d990511094ef
+## 🚀 Funcionalidades
 
-## Run Locally
+- **Fidelidade Visual:** O layout no navegador é idêntico ao arquivo PDF original.
+- **Web-First:** Desenvolvido puramente com HTML5, CSS3 e JavaScript.
+- **Exportação Otimizada:** Configurado com CSS Media Queries (`@media print`) para que, ao utilizar a função "Imprimir" (Ctrl+P) do navegador e selecionar "Salvar como PDF", o resultado seja um documento idêntico ao original.
+- **Hospedagem Simples:** Totalmente compatível com GitHub Pages.
 
-**Prerequisites:**  Node.js
+## 🛠️ Tecnologias Utilizadas
 
+- **HTML5:** Estruturação semântica do conteúdo.
+- **CSS3:** Estilização avançada e controle de layout para impressão.
+- **JavaScript (main.js):** Lógica auxiliar para interatividade e gerenciamento de impressão.
+- **Google AI Studio:** Utilizado para o processo de conversão e estruturação inicial dos arquivos.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 💻 Visualização Online
+
+O projeto pode ser visualizado em tempo real através do link abaixo:
+👉 [https://pedrogg20.github.io/novocurriculo/](https://pedrogg20.github.io/novocurriculo/)
+
+## 📂 Estrutura do Repositório
+
+- `index.html`: Estrutura do currículo.
+- `style.css`: Estilização e regras de layout para tela e impressão.
+- `main.js`: Comportamentos do documento.
+
+## ⚖️ Licença
+
+Este projeto está licenciado sob a **GNU GPLv2**.
+
+A licença GNU GPL2 permite que você use, estude, compartilhe e modifique o software, desde que qualquer trabalho derivado também seja distribuído sob a mesma licença. Para mais detalhes, consulte o arquivo [LICENSE](LICENSE) ou acesse o link oficial: [GNU General Public License, version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
+
+---
+Desenvolvido por [Pedrogg20](https://github.com/pedrogg20)
