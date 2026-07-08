@@ -163,6 +163,7 @@ function createSidebar() {
   aside.appendChild(createDivider());
   aside.appendChild(createContactSection());
   aside.appendChild(createDivider());
+  aside.appendChild(createAreaAtuacaoSection());
   aside.appendChild(createCompetenciasSection());
 
   // Idiomas (só se houver)
@@ -231,6 +232,24 @@ function createContactSection() {
   `;
 
   section.innerHTML = contatoHTML;
+
+  return section;
+}
+
+// Área de Atuação
+function createAreaAtuacaoSection() {
+  const section = document.createElement('section');
+  section.className = 'sidebar-section';
+
+  let areaHTML = '';
+  currentData.areaAtuacao.forEach(area => {
+    areaHTML += `<div class="area-item"><span>${area}</span></div>`;
+  });
+
+  section.innerHTML = `
+    <h2>Área de Atuação</h2>
+    ${areaHTML}
+  `;
 
   return section;
 }

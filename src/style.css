@@ -230,6 +230,17 @@ body {
   margin-bottom: 5px;
 }
 
+/* Área de Atuação */
+.area-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
 /* Seções do Conteúdo Principal */
 .content-section {
   margin-bottom: 35px;
@@ -554,6 +565,15 @@ body {
   .language-list li {
     margin-bottom: 4px !important;
     color: black !important;
+  }
+
+  .area-item {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    align-items: center !important;
+    margin-bottom: 6px !important;
+    color: black !important;
+    font-size: 9.5pt !important;
   }
 
   .entry {

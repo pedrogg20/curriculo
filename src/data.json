@@ -16,6 +16,10 @@
     "Serviços Gerais e Limpeza",
     "Preparação de Alimentos e Bebidas"
   ],
+  "areaAtuacao": [
+    "Atendente de Lanchonete",
+    "Diarista"
+  ],
   "experiencia": [
     {
       "empresa": "Lanchonete Imperial",
