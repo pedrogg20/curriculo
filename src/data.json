@@ -1,0 +1,68 @@
+{
+  "nome": "Tatiana Oeiras Favacho Ferreira",
+  "cargo": "Atendimento ao Cliente | Operadora de Caixa | Serviços Gerais",
+  "contato": {
+    "telefones": [
+      "(91) 98481-9147",
+      "(91) 99205-8416"
+    ],
+    "email": "tatioeiras2@gmail.com",
+    "localizacao": "Guanabara, Ananindeua - PA"
+  },
+  "resumo": "Profissional dedicada e proativa, com experiência em atendimento ao cliente, operação de caixa e organização de ambientes comerciais. Possuo habilidades em comunicação, trabalho em equipe e resolução de problemas. Busco oportunidades para contribuir com o crescimento da empresa, aplicando minha experiência prática e disposição para novos aprendizados.",
+  "areaAtuacao": [
+    "Atendimento ao Cliente",
+    "Operação de Caixa",
+    "Serviços Gerais e Limpeza",
+    "Preparação de Alimentos e Bebidas"
+  ],
+  "experiencia": [
+    {
+      "empresa": "Lanchonete Imperial",
+      "periodo": "2026",
+      "local": "Ananindeua - PA",
+      "cargo": "Atendente e Operadora de Caixa",
+      "descricao": [
+        "Atendimento ao público com cordialidade e agilidade, garantindo a satisfação do cliente",
+        "Operação de caixa registradora, controle de pagamentos e fechamento diário",
+        "Preparação de bebidas (sucos, cafés, vitaminas) e lanches (mistos, frituras diversas)",
+        "Organização, higienização e manutenção do ambiente conforme normas sanitárias"
+      ]
+    }
+  ],
+  "formacao": [
+    {
+      "nivel": "Ensino Médio Completo",
+      "instituicao": "EEEM Ramiro Olavo",
+      "conclusao": "2025",
+      "local": "Ananindeua - PA"
+    }
+  ],
+  "cursos": [
+    {
+      "nome": "Informática - Pacote Office",
+      "instituicao": "Inform&C Ltda Me",
+      "periodo": "Jan/2002 a Nov/2002",
+      "cargaHoraria": "11 horas"
+    },
+    {
+      "nome": "Secretariado",
+      "instituicao": "Centro Social Santo Agostinho",
+      "periodo": "Mar/2007",
+      "cargaHoraria": ""
+    }
+  ],
+  "competencias": [
+    "Comunicação clara e objetiva",
+    "Organização e gestão do tempo",
+    "Trabalho em equipe",
+    "Proatividade e iniciativa",
+    "Operação de caixa",
+    "Preparação de alimentos",
+    "Higienização e limpeza"
+  ],
+  "informacoesAdicionais": {
+    "documentacao": "Documentação completa e em ordem",
+    "disponibilidade": "Disponibilidade de horário"
+  }
+}

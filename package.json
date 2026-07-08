@@ -1,0 +1,16 @@
+{
+  "name": "curriculo-tatiana",
+  "version": "1.0.0",
+  "description": "Currículo web de Tatiana Ferreira",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server src -p 3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "curriculo",
+    "pdf"
+  ],
+  "author": "Tatiana Ferreira",
+  "license": "MIT"
+}

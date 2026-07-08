@@ -1,0 +1,29 @@
+# Dependências
+node_modules/
+
+# Arquivos locais
+.env
+.env.local
+
+# Arquivos de build
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Arquivos grandes
+*.pdf
+*.zip
+*.tar.gz
