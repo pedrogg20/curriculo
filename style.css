@@ -313,6 +313,14 @@ body {
   font-size: 0.9rem;
 }
 
+.entry-date-line {
+  font-family: var(--font-header);
+  color: var(--primary-blue);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
 .entry-subtitle {
   font-family: var(--font-header);
   font-weight: 600;
@@ -518,7 +526,8 @@ body {
   }
 
   /* Datas em preto (não azul) */
-  .entry-date {
+  .entry-date,
+  .entry-date-line {
     font-size: 9.5pt !important;
     color: black !important;
     font-weight: 700 !important;

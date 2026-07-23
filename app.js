@@ -323,8 +323,8 @@ function createExperienciaSection() {
     <div class="entry">
       <div class="entry-header">
         <span class="entry-title">${exp.cargo} | ${exp.empresa}</span>
-        <span class="entry-date">${periodoDisplay}</span>
       </div>
+      <div class="entry-date-line">${periodoDisplay}</div>
       ${localDisplay ? `<div class="entry-subtitle">${localDisplay}</div>` : ''}
       <ul class="entry-description">
         ${exp.descricao.map(desc => `<li>${desc}</li>`).join('')}
