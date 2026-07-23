@@ -136,6 +136,7 @@ function createSidebar() {
   // Idiomas (só se houver)
   const idiomasSection = createIdiomasSection();
   if (idiomasSection) {
+    aside.appendChild(createDivider());
     aside.appendChild(idiomasSection);
   }
 
