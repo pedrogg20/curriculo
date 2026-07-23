@@ -240,7 +240,7 @@ function createCompetenciasSection() {
   });
 
   section.innerHTML = `
-    <h2>Competências</h2>
+    <h2>Habilidades</h2>
     ${skillsHTML}
   `;
 
