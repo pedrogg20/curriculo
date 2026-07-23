@@ -182,11 +182,20 @@ body {
   gap: 20px;
 }
 
-.contact-item i,
-.contact-item svg.contact-icon {
+.contact-item i {
   color: #666;
   width: 14px;
   height: 14px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-item svg.contact-icon {
+  color: #666;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -530,10 +539,19 @@ body {
     color: black !important;
   }
 
-  .contact-item i,
-  .contact-item svg.contact-icon {
+  .contact-item i {
     width: 14px !important;
     height: 14px !important;
+    margin-top: 3px !important;
+    justify-self: start !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+    color: black !important;
+  }
+
+  .contact-item svg.contact-icon {
+    width: 16px !important;
+    height: 16px !important;
     margin-top: 3px !important;
     justify-self: start !important;
     flex-shrink: 0 !important;
