@@ -130,6 +130,7 @@ function createSidebar() {
   aside.appendChild(createContactSection());
   aside.appendChild(createDivider());
   aside.appendChild(createAreaAtuacaoSection());
+  aside.appendChild(createDivider());
   aside.appendChild(createCompetenciasSection());
 
   // Idiomas (só se houver)
