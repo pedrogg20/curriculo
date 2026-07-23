@@ -11,7 +11,7 @@ const app = document.getElementById('app');
 async function loadData() {
   try {
     // Tenta carregar do localStorage primeiro (dados salvos localmente)
-    const storedData = localStorage.getItem('curriculo-tatiana-data');
+    const storedData = localStorage.getItem('curriculo-pedro-data');
     
     if (storedData) {
       currentData = JSON.parse(storedData);
@@ -115,54 +115,9 @@ function createEditButton() {
     Editar
   `;
   btn.onclick = () => {
-    showLogin();
+    window.open('https://github.com/pedrogg20/curriculo/blob/main/src/data.json', '_blank');
   };
   return btn;
-}
-
-// Modal de Login para acesso ao editor
-function showLogin() {
-  const password = prompt('Digite a senha para editar o currículo:', '');
-  if (password === 'tatiana2026') {
-    startEditing();
-  } else if (password !== null) {
-    alert('Senha incorreta!');
-  }
-}
-
-// Iniciar modo de edição
-function startEditing() {
-  if (!confirm('Modo de edição ativado. Você pode editar o currículo nos campos abaixo. Deseja continuar?')) {
-    return;
-  }
-  
-  // Substituir o currículo por um formulário de edição
-  app.innerHTML = '';
-  
-  const editContainer = document.createElement('div');
-  editContainer.className = 'edit-container';
-  
-  editContainer.innerHTML = `
-    <div class="edit-header">
-      <h2>Editar Currículo</h2>
-      <button id="cancel-edit" class="cancel-btn">Cancelar</button>
-      <button id="save-edit" class="save-btn">Salvar</button>
-    </div>
-    <div class="edit-form" id="edit-form"></div>
-  `;
-  
-  app.appendChild(editContainer);
-  
-  renderEditForm();
-  
-  // Adicionar eventos dos botões
-  document.getElementById('cancel-edit').onclick = () => {
-    loadData(); // Recarregar o currículo original
-  };
-  
-  document.getElementById('save-edit').onclick = () => {
-    saveEdits();
-  };
 }
 
 // Sidebar (esquerda)
@@ -239,6 +194,15 @@ function createContactSection() {
 
   contatoHTML += `
     <div class="contact-item"><i data-lucide="mail"></i><a href="mailto:${currentData.contato.email}">${currentData.contato.email}</a></div>
+  `;
+
+  if (currentData.contato.linkedin) {
+    contatoHTML += `
+    <div class="contact-item"><i data-lucide="linkedin"></i><a href="https://${currentData.contato.linkedin}" target="_blank">${currentData.contato.linkedin}</a></div>
+    `;
+  }
+
+  contatoHTML += `
     <div class="contact-item"><i data-lucide="map-pin"></i><span>${currentData.contato.localizacao}</span></div>
   `;
 
@@ -653,7 +617,7 @@ async function saveEdits() {
     }));
 
     // Salvar no localStorage (para uso local imediato)
-    localStorage.setItem('curriculo-tatiana-data', JSON.stringify(currentData));
+    localStorage.setItem('curriculo-pedro-data', JSON.stringify(currentData));
 
     alert('Alterações salvas com sucesso!\n\nAs alterações estão visíveis agora na tela.');
 

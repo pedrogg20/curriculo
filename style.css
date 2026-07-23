@@ -25,14 +25,14 @@ body {
   background-color: #f4f4f4;
   color: var(--text-dark);
   line-height: 1.6;
-  padding: 40px 20px;
+  padding: 60px 40px;
 }
 
 /* Botão de Imprimir */
 .print-button {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 40px;
+  right: 40px;
   padding: 12px 24px;
   background-color: var(--primary-blue);
   color: white;
@@ -63,8 +63,8 @@ body {
 /* Botão de Edição */
 .edit-button {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 40px;
+  left: 40px;
   padding: 12px 24px;
   background-color: #28a745;
   color: white;
@@ -94,7 +94,7 @@ body {
 
 .resume-container {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
   background: var(--bg-white);
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   display: flex;
@@ -106,7 +106,7 @@ body {
 /* Coluna da Esquerda (Contato, Competências, Idiomas) */
 .sidebar {
   width: 38%;
-  padding: 60px 35px;
+  padding: 60px 50px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -116,7 +116,7 @@ body {
 /* Coluna da Direita (Resumo, Formação, Experiência) */
 .main-content {
   width: 62%;
-  padding: 60px 40px;
+  padding: 60px 50px;
   border-left: 1px solid #eee;
 }
 
@@ -351,8 +351,15 @@ body {
   }
 
   .print-button {
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .edit-button {
+    top: 20px;
+    left: 20px;
     padding: 10px 16px;
     font-size: 14px;
   }
@@ -407,6 +414,10 @@ body {
     display: none !important;
   }
 
+  .edit-button {
+    display: none !important;
+  }
+
   .resume-container {
     width: 210mm;
     height: 297mm;
@@ -421,7 +432,7 @@ body {
 
   .sidebar {
     width: 38% !important;
-    padding: 25px 20px !important;
+    padding: 40px 40px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -432,7 +443,7 @@ body {
 
   .main-content {
     width: 62% !important;
-    padding: 25px 25px !important;
+    padding: 40px 40px !important;
     border-left: 1px solid #ddd !important;
     background: white !important;
   }
@@ -440,8 +451,8 @@ body {
   .vertical-divider {
     display: block !important;
     left: 38% !important;
-    top: 25px !important;
-    bottom: 25px !important;
+    top: 40px !important;
+    bottom: 40px !important;
     width: 1px !important;
     background-color: #ddd !important;
   }
@@ -695,7 +706,7 @@ body {
 }
 
 .form-group textarea {
-  min-height: 80px;
+  height: 120px;
   resize: vertical;
 }
 

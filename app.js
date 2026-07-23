@@ -10,11 +10,22 @@ const app = document.getElementById('app');
 // Carregar dados do JSON
 async function loadData() {
   try {
-    const response = await fetch('./data.json');
-    if (!response.ok) {
-      throw new Error('Erro ao carregar data.json');
+    // Tenta carregar do localStorage primeiro (dados salvos localmente)
+    const storedData = localStorage.getItem('curriculo-pedro-data');
+    
+    if (storedData) {
+      currentData = JSON.parse(storedData);
+      console.log('Dados carregados do localStorage');
+    } else {
+      // Se não houver dados locais, carrega do data.json
+      const response = await fetch('./data.json');
+      if (!response.ok) {
+        throw new Error('Erro ao carregar data.json');
+      }
+      currentData = await response.json();
+      console.log('Dados carregados do data.json');
     }
-    currentData = await response.json();
+    
     render();
   } catch (error) {
     console.error('Erro ao carregar dados:', error);
@@ -104,54 +115,9 @@ function createEditButton() {
     Editar
   `;
   btn.onclick = () => {
-    showLogin();
+    window.open('https://github.com/pedrogg20/curriculo/blob/main/src/data.json', '_blank');
   };
   return btn;
-}
-
-// Modal de Login para acesso ao editor
-function showLogin() {
-  const password = prompt('Digite a senha para editar o currículo:', '');
-  if (password === 'tatiana2026') {
-    startEditing();
-  } else if (password !== null) {
-    alert('Senha incorreta!');
-  }
-}
-
-// Iniciar modo de edição
-function startEditing() {
-  if (!confirm('Modo de edição ativado. Você pode editar o currículo nos campos abaixo. Deseja continuar?')) {
-    return;
-  }
-  
-  // Substituir o currículo por um formulário de edição
-  app.innerHTML = '';
-  
-  const editContainer = document.createElement('div');
-  editContainer.className = 'edit-container';
-  
-  editContainer.innerHTML = `
-    <div class="edit-header">
-      <h2>Editar Currículo</h2>
-      <button id="cancel-edit" class="cancel-btn">Cancelar</button>
-      <button id="save-edit" class="save-btn">Salvar</button>
-    </div>
-    <div class="edit-form" id="edit-form"></div>
-  `;
-  
-  app.appendChild(editContainer);
-  
-  renderEditForm();
-  
-  // Adicionar eventos dos botões
-  document.getElementById('cancel-edit').onclick = () => {
-    loadData(); // Recarregar o currículo original
-  };
-  
-  document.getElementById('save-edit').onclick = () => {
-    saveEdits();
-  };
 }
 
 // Sidebar (esquerda)
@@ -228,6 +194,15 @@ function createContactSection() {
 
   contatoHTML += `
     <div class="contact-item"><i data-lucide="mail"></i><a href="mailto:${currentData.contato.email}">${currentData.contato.email}</a></div>
+  `;
+
+  if (currentData.contato.linkedin) {
+    contatoHTML += `
+    <div class="contact-item"><i data-lucide="linkedin"></i><a href="https://${currentData.contato.linkedin}" target="_blank">${currentData.contato.linkedin}</a></div>
+    `;
+  }
+
+  contatoHTML += `
     <div class="contact-item"><i data-lucide="map-pin"></i><span>${currentData.contato.localizacao}</span></div>
   `;
 
@@ -448,7 +423,7 @@ function renderEditForm() {
           <div class="form-group formacao-item" data-index="${index}">
             <div class="form-actions">
               <label>Formação ${index + 1}</label>
-              <button type="button" class="remove-item-btn" onclick="removeFormacao(${index})">Remover</button>
+              <button type="button" class="remove-item-btn" data-action="remove-formacao" data-index="${index}">Remover</button>
             </div>
             <input type="text" class="edit-formacao-nivel" value="${form.nivel}" placeholder="Nível de formação">
             <input type="text" class="edit-formacao-instituicao" value="${form.instituicao}" placeholder="Instituição">
@@ -457,7 +432,7 @@ function renderEditForm() {
           </div>
         `).join('')}
       </div>
-      <button type="button" class="add-item-btn" onclick="addFormacao()">+ Adicionar Formação</button>
+      <button type="button" class="add-item-btn" data-action="add-formacao">+ Adicionar Formação</button>
     </div>
   `;
 
@@ -470,7 +445,7 @@ function renderEditForm() {
           <div class="form-group experiencia-item" data-index="${index}">
             <div class="form-actions">
               <label>Experiência ${index + 1}</label>
-              <button type="button" class="remove-item-btn" onclick="removeExperiencia(${index})">Remover</button>
+              <button type="button" class="remove-item-btn" data-action="remove-experiencia" data-index="${index}">Remover</button>
             </div>
             <input type="text" class="edit-experiencia-empresa" value="${exp.empresa}" placeholder="Empresa">
             <input type="text" class="edit-experiencia-periodo" value="${exp.periodo}" placeholder="Período">
@@ -480,7 +455,7 @@ function renderEditForm() {
           </div>
         `).join('')}
       </div>
-      <button type="button" class="add-item-btn" onclick="addExperiencia()">+ Adicionar Experiência</button>
+      <button type="button" class="add-item-btn" data-action="add-experiencia">+ Adicionar Experiência</button>
     </div>
   `;
 
@@ -493,7 +468,7 @@ function renderEditForm() {
           <div class="form-group curso-item" data-index="${index}">
             <div class="form-actions">
               <label>Curso ${index + 1}</label>
-              <button type="button" class="remove-item-btn" onclick="removeCurso(${index})">Remover</button>
+              <button type="button" class="remove-item-btn" data-action="remove-curso" data-index="${index}">Remover</button>
             </div>
             <input type="text" class="edit-curso-nome" value="${curso.nome}" placeholder="Nome do curso">
             <input type="text" class="edit-curso-instituicao" value="${curso.instituicao}" placeholder="Instituição">
@@ -502,11 +477,22 @@ function renderEditForm() {
           </div>
         `).join('')}
       </div>
-      <button type="button" class="add-item-btn" onclick="addCurso()">+ Adicionar Curso</button>
+      <button type="button" class="add-item-btn" data-action="add-curso">+ Adicionar Curso</button>
     </div>
   `;
 
   form.innerHTML = formHTML;
+
+  // Adicionar event listeners para os botões
+  const removeButtons = form.querySelectorAll('.remove-item-btn');
+  removeButtons.forEach(btn => {
+    btn.addEventListener('click', handleRemoveClick);
+  });
+
+  const addButtons = form.querySelectorAll('.add-item-btn');
+  addButtons.forEach(btn => {
+    btn.addEventListener('click', handleAddClick);
+  });
 }
 
 // Funções auxiliares para manipulação da formação
@@ -556,8 +542,34 @@ function addCurso() {
   renderEditForm();
 }
 
+// Funções para tratar cliques nos botões
+function handleRemoveClick(event) {
+  const action = event.target.dataset.action;
+  const index = parseInt(event.target.dataset.index);
+  
+  if (action === 'remove-formacao') {
+    removeFormacao(index);
+  } else if (action === 'remove-experiencia') {
+    removeExperiencia(index);
+  } else if (action === 'remove-curso') {
+    removeCurso(index);
+  }
+}
+
+function handleAddClick(event) {
+  const action = event.target.dataset.action;
+  
+  if (action === 'add-formacao') {
+    addFormacao();
+  } else if (action === 'add-experiencia') {
+    addExperiencia();
+  } else if (action === 'add-curso') {
+    addCurso();
+  }
+}
+
 // Salvar alterações
-function saveEdits() {
+async function saveEdits() {
   try {
     // Atualizar dados do currentData com os valores do formulário
     currentData.nome = document.getElementById('edit-nome').value.trim();
@@ -604,15 +616,16 @@ function saveEdits() {
       cargaHoraria: el.querySelector('.edit-curso-cargaHoraria').value.trim()
     }));
 
-    // Salvar no localStorage (para uso local)
-    localStorage.setItem('curriculo-tatiana-data', JSON.stringify(currentData));
+    // Salvar no localStorage (para uso local imediato)
+    localStorage.setItem('curriculo-pedro-data', JSON.stringify(currentData));
 
-    // Exibir mensagem e recarregar
-    alert('Currículo atualizado com sucesso!');
+    alert('Alterações salvas com sucesso!\n\nAs alterações estão visíveis agora na tela.');
+
+    // Recarregar o currículo para mostrar as alterações
     loadData();
   } catch (error) {
     console.error('Erro ao salvar:', error);
-    alert('Erro ao salvar as alterações. Verifique os dados e tente novamente.');
+    alert('Erro ao salvar as alterações: ' + error.message + '\n\nTente novamente.');
   }
 }
 

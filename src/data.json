@@ -1,67 +1,94 @@
 {
-  "nome": "Tatiana Oeiras Favacho Ferreira",
-  "cargo": "Atendimento ao Cliente | Operadora de Caixa | Serviços Gerais",
+  "nome": "Pedro Elias dos Santos Ferreira",
+  "cargo": "Designer Gráfico | Auxiliar Administrativo",
   "contato": {
     "telefones": [
-      "(91) 98481-9147",
-      "(91) 99205-8416"
+      "(41) 98840-2775"
     ],
-    "email": "tatioeiras2@gmail.com",
-    "localizacao": "Guanabara, Ananindeua - PA"
+    "email": "pedroeliasferreira@gmail.com",
+    "linkedin": "linkedin.com/in/pedroeliasferreira",
+    "localizacao": "Av. Dr. Freitas, 1228, Pedreira, Belém/PA"
   },
-  "resumo": "Profissional dedicada e proativa, com experiência em atendimento ao cliente, operação de caixa e organização de ambientes comerciais. Possuo habilidades em comunicação, trabalho em equipe e resolução de problemas. Busco oportunidades para contribuir com o crescimento da empresa, aplicando minha experiência prática e disposição para novos aprendizados.",
+  "resumo": "Graduado em Design Gráfico (concluído em 2025), PCD auditivo, com perfil resiliente e foco em comunicação visual. Experiência administrativa e habilidades em produção e edição gráfica, unindo organização e criatividade.",
   "areaAtuacao": [
-    "Atendimento ao Cliente",
-    "Operação de Caixa",
-    "Serviços Gerais e Limpeza",
-    "Preparação de Alimentos e Bebidas",
-    "Atendente de Lanchonete",
-    "Diarista"
+    "Design Gráfico",
+    "Edição de Vídeo",
+    "Administrativo"
   ],
   "experiencia": [
     {
-      "empresa": "Lanchonete Imperial",
-      "periodo": "2026",
-      "local": "Ananindeua - PA",
-      "cargo": "Atendente e Operadora de Caixa",
+      "empresa": "TJPR - Tribunal de Justiça do Paraná",
+      "periodo": "2021 - 2023",
+      "local": "Curitiba - PR",
+      "cargo": "Auxiliar Administrativo",
       "descricao": [
-        "Atendimento ao público com cordialidade e agilidade, garantindo a satisfação do cliente",
-        "Operação de caixa registradora, controle de pagamentos e fechamento diário",
-        "Preparação de bebidas (sucos, cafés, vitaminas) e lanches (mistos, frituras diversas)",
-        "Organização, higienização e manutenção do ambiente conforme normas sanitárias"
+        "Gestão documental e suporte administrativo especializado ao setor de processos",
+        "Expertise em organização de dados via Microsoft Excel",
+        "Manutenção de sistemas de registro corporativo",
+        "Garantia da celeridade na tramitação de documentos oficiais"
+      ]
+    },
+    {
+      "empresa": "Trombini Embalagens S/A",
+      "periodo": "2019 - 2021",
+      "local": "Curitiba - PR",
+      "cargo": "Auxiliar de Escritório",
+      "descricao": [
+        "Treinamentos na área de auxiliar de escritório"
       ]
     }
   ],
   "formacao": [
     {
-      "nivel": "Ensino Médio Completo",
-      "instituicao": "EEEM Ramiro Olavo",
+      "nivel": "Tecnologia em Design Gráfico",
+      "instituicao": "UNAMA - Universidade da Amazônia",
       "conclusao": "2025",
-      "local": "Ananindeua - PA"
+      "local": "Belém - PA"
+    },
+    {
+      "nivel": "Ensino Médio",
+      "instituicao": "Colégio Estadual para Surdos Alcindo Fanaya Junior",
+      "conclusao": "2017",
+      "local": ""
     }
   ],
   "cursos": [
     {
-      "nome": "Informática - Pacote Office",
-      "instituicao": "Inform&C Ltda Me",
-      "periodo": "Jan/2002 a Nov/2002",
-      "cargaHoraria": "11 horas"
+      "nome": "Pacote Office",
+      "instituicao": "",
+      "periodo": "",
+      "cargaHoraria": "100 horas"
     },
     {
-      "nome": "Secretariado",
-      "instituicao": "Centro Social Santo Agostinho",
-      "periodo": "Mar/2007",
-      "cargaHoraria": ""
+      "nome": "Auxiliar Administrativo",
+      "instituicao": "",
+      "periodo": "",
+      "cargaHoraria": "100 horas"
+    },
+    {
+      "nome": "Inglês Básico",
+      "instituicao": "",
+      "periodo": "",
+      "cargaHoraria": "10 horas"
+    },
+    {
+      "nome": "Adobe Photoshop - Modo Essencial",
+      "instituicao": "Héber Simeoni Cursos Online",
+      "periodo": "",
+      "cargaHoraria": "11 horas"
     }
   ],
   "competencias": [
-    "Comunicação clara e objetiva",
-    "Organização e gestão do tempo",
-    "Trabalho em equipe",
-    "Proatividade e iniciativa",
-    "Operação de caixa",
-    "Preparação de alimentos",
-    "Higienização e limpeza"
+    "Adobe Premiere Pro (Básico)",
+    "Adobe After Effects (Básico)",
+    "Adobe Photoshop (Básico)",
+    "Adobe Illustrator (Básico)",
+    "Microsoft Excel",
+    "Pacote Office"
+  ],
+  "idiomas": [
+    "Libras",
+    "Inglês"
   ],
   "informacoesAdicionais": {
     "documentacao": "Documentação completa e em ordem",
