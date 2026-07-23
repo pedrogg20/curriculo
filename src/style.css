@@ -450,7 +450,7 @@ body {
 
   .sidebar {
     width: 38% !important;
-    padding: 40px 40px !important;
+    padding: 25px 30px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -461,7 +461,7 @@ body {
 
   .main-content {
     width: 62% !important;
-    padding: 40px 40px !important;
+    padding: 25px 30px !important;
     border-left: 1px solid #ddd !important;
     background: white !important;
   }
@@ -469,8 +469,8 @@ body {
   .vertical-divider {
     display: block !important;
     left: 38% !important;
-    top: 40px !important;
-    bottom: 40px !important;
+    top: 25px !important;
+    bottom: 25px !important;
     width: 1px !important;
     background-color: #ddd !important;
   }
@@ -478,33 +478,26 @@ body {
   .content-section {
     opacity: 1 !important;
     transform: none !important;
-    margin-bottom: 18px !important;
+    margin-bottom: 12px !important;
     page-break-inside: avoid;
     background: white !important;
   }
 
   .name-header {
-    margin-bottom: 20px !important;
+    margin-bottom: 12px !important;
     background: white !important;
   }
 
   .name-header h1 {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
     line-height: 1.1 !important;
     color: black !important;
   }
 
   .section-title {
-    font-size: 1.1rem !important;
-    margin-bottom: 12px !important;
+    font-size: 1rem !important;
+    margin-bottom: 8px !important;
     color: black !important;
-  }
-
-  .sidebar-section h2 {
-    font-size: 1.1rem !important;
-    margin-bottom: 12px !important;
-    color: black !important;
-    text-align: left !important;
   }
 
   /* Todas as textos em preto para o PDF */
@@ -536,7 +529,21 @@ body {
 
   /* Linhas horizontais em cinza escuro */
   .sidebar-divider {
+    width: 100% !important;
+    height: 1px !important;
     background-color: #333 !important;
+    margin: 15px 0 !important;
+  }
+
+  .sidebar-section {
+    margin-bottom: 15px !important;
+  }
+
+  .sidebar-section h2 {
+    font-size: 1.1rem !important;
+    margin-bottom: 8px !important;
+    color: black !important;
+    text-align: left !important;
   }
 
   /* Alinhamento preciso para contatos */
