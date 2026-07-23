@@ -346,11 +346,18 @@ function createCursosSection() {
   section.className = 'content-section';
 
   let entries = currentData.cursos.map(curso => {
-    let cargaHorariaDisplay = curso.cargaHoraria ? ` | ${curso.cargaHoraria}` : '';
+    let subtitle = '';
+    if (curso.instituicao && curso.cargaHoraria) {
+      subtitle = `${curso.instituicao} (${curso.cargaHoraria})`;
+    } else if (curso.cargaHoraria) {
+      subtitle = `Carga Horária: ${curso.cargaHoraria}`;
+    } else if (curso.instituicao) {
+      subtitle = curso.instituicao;
+    }
     return `
     <div class="course-item">
       <div class="course-name">${curso.nome}</div>
-      <div class="course-hours">${curso.instituicao} | ${curso.periodo}${cargaHorariaDisplay}</div>
+      ${subtitle ? `<div class="course-hours">${subtitle}</div>` : ''}
     </div>
   `}).join('');
 
