@@ -504,6 +504,7 @@ body {
     font-size: 1.1rem !important;
     margin-bottom: 12px !important;
     color: black !important;
+    text-align: left !important;
   }
 
   /* Todas as textos em preto para o PDF */
@@ -542,6 +543,7 @@ body {
   .contact-item {
     display: flex !important;
     align-items: center !important;
+    justify-content: flex-start !important;
     gap: 10px !important;
     margin-bottom: 10px !important;
     color: black !important;
