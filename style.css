@@ -540,31 +540,18 @@ body {
 
   /* Alinhamento preciso para contatos */
   .contact-item {
-    display: grid !important;
-    grid-template-columns: 22px 1fr !important;
-    align-items: start !important;
-    gap: 5px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
     margin-bottom: 10px !important;
     color: black !important;
   }
 
-  .contact-item i {
+  .contact-item i,
+  .contact-item svg.contact-icon {
     width: 14px !important;
     height: 14px !important;
-    margin-top: 3px !important;
-    justify-self: start !important;
     flex-shrink: 0 !important;
-    display: block !important;
-    color: black !important;
-  }
-
-  .contact-item svg.contact-icon {
-    width: 16px !important;
-    height: 16px !important;
-    margin-top: 3px !important;
-    justify-self: start !important;
-    flex-shrink: 0 !important;
-    display: block !important;
     color: black !important;
   }
 
